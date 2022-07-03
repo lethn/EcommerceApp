@@ -61,7 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textColor="@color/white"
-            android:backgroundTint="@color/purple_500"
+            android:backgroundTint="@{item.available ? @color/purple_500 : @color/light_grey}"
             android:enabled="@{item.available}"
             android:onClick="@{() -> shopInterface.addItem(item)}"
             android:text="ADD TO CART"

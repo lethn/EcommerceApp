@@ -73,7 +73,7 @@
                 android:enabled="@{shopViewModel.item.available}"
                 android:text="ADD TO CART"
                 android:textColor="@color/white"
-                android:backgroundTint="@color/purple_500"
+                android:backgroundTint="@{shopViewModel.item.available ? @color/purple_500 : @color/light_grey}"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
                 android:onClick="@{() -> shopViewModel.addItemToCart(shopViewModel.item)}"
                 />
