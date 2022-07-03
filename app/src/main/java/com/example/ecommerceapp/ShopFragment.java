@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -37,6 +38,9 @@ public class ShopFragment extends Fragment implements ShopListAdapter.ShopInterf
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         fragmentShopBinding = FragmentShopBinding.inflate(inflater, container, false);
+
+        //Hide back button of Shop Fragment
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         return fragmentShopBinding.getRoot();
     }
 

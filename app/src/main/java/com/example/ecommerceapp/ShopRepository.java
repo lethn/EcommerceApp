@@ -3,6 +3,8 @@ package com.example.ecommerceapp;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -10,6 +12,7 @@ import java.util.UUID;
 public class ShopRepository {
 
     private MutableLiveData<List<Item>> mutableItemList;
+    private List<LatLng> LatLngList;
 
     public LiveData<List<Item>> getItems() {
         if (mutableItemList == null) {
@@ -46,5 +49,31 @@ public class ShopRepository {
         detailOfItemsList.add("The combination of the fatty taste of the sunny side egg, the salty taste of the smoked garlic sausage, the fresh taste of lettuce and tomatoes, brings the dish with full color, nutrition and flavor.");
         detailOfItemsList.add("Adding size L for convenient iced black coffee, Coffee is roasted, ground, carefully filtered with 100% pure Robusta and Arabica mixed beans, fragrantly roasted to bring the right cup of coffee, creating a perfect cup of coffee. characteristic flavor.\n" + "Adding size L for convenient iced milk coffee, pure coffee combined with greasy condensed milk creates a rich flavor, a harmony between sweetness and delicious bitterness.");
     }*/
+
+    public List<LatLng> getLatLng(){
+        if(LatLngList == null){
+            LatLngList = new ArrayList<>();
+            loadLatLng();
+        }
+        return LatLngList;
+    }
+
+    private void loadLatLng(){
+        LatLngList.add(new LatLng(10.762392292279387, 106.6828408583214));
+        LatLngList.add(new LatLng(10.761506921237377, 106.68133882120677));
+        LatLngList.add(new LatLng(10.757332994160748, 106.68318418109047));
+        LatLngList.add(new LatLng(10.755351412596788, 106.68193963605262));
+        LatLngList.add(new LatLng(10.760284261714023, 106.67335656682604));
+        LatLngList.add(new LatLng(10.75269522965522, 106.67211202178818));
+        LatLngList.add(new LatLng(10.762392292279387, 106.66833547132849));
+        LatLngList.add(new LatLng(10.75691138215239, 106.66846421736689));
+        LatLngList.add(new LatLng(10.75944104536066, 106.66571763521439));
+        LatLngList.add(new LatLng(10.755773026785839, 106.66580346590665));
+        LatLngList.add(new LatLng(10.754676828668543, 106.6646876669072));
+        LatLngList.add(new LatLng(10.754887636308172, 106.66155484663949));
+        LatLngList.add(new LatLng(10.750165509874616, 106.6612973545627));
+        LatLngList.add(new LatLng(10.753538464868843, 106.66031030160163));
+        LatLngList.add(new LatLng(10.753664949947593, 106.65511754471956));
+    }
 }
 
