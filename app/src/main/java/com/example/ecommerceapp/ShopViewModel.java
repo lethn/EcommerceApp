@@ -4,6 +4,8 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import java.util.List;
 
 public class ShopViewModel extends ViewModel {
@@ -12,18 +14,6 @@ public class ShopViewModel extends ViewModel {
     CartRepository cartRepository = new CartRepository();
 
     MutableLiveData<Item> mutableItem = new MutableLiveData<>();
-
-    public LiveData<List<Item>> getItems() {
-        return shopRepository.getItems();
-    }
-
-    public void setItem(Item item) {
-        mutableItem.setValue(item);
-    }
-
-    public LiveData<Item> getItem() {
-        return mutableItem;
-    }
 
     public LiveData<List<CartItem>> getCart() {
         return cartRepository.getCart();
@@ -47,6 +37,22 @@ public class ShopViewModel extends ViewModel {
 
     public void resetCart() {
         cartRepository.initCart();
+    }
+
+    public LiveData<List<Item>> getItems() {
+        return shopRepository.getItems();
+    }
+
+    public void setItem(Item item) {
+        mutableItem.setValue(item);
+    }
+
+    public LiveData<Item> getItem() {
+        return mutableItem;
+    }
+
+    public List<LatLng> getLatLngList(){
+        return shopRepository.getLatLng();
     }
 
 }
