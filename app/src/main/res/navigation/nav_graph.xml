@@ -23,7 +23,7 @@
     <fragment
         android:id="@+id/itemDetailFragment"
         android:name="com.example.ecommerceapp.ItemDetailFragment"
-        android:label="FamilyMart Item Detail"
+        android:label="FamilyMart Product Details"
         tools:layout="@layout/fragment_item_detail">
         <action
             android:id="@+id/action_itemDetailFragment_to_cartFragment"

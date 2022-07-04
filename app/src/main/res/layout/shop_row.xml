@@ -63,7 +63,7 @@
                 android:layout_gravity="center"
                 android:text="@{item.available ? `Available` : `Out of Stock`}"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-                android:textColor="@{item.available ? @color/purple_500 : @color/red}" />
+                android:textColor="@{item.available ? @color/green_500 : @color/red}" />
 
             <Button
                 android:id="@+id/addToCartButton"
@@ -73,7 +73,7 @@
                 android:layout_marginBottom="10dp"
                 android:layout_gravity="center"
                 android:textColor="@color/white"
-                android:backgroundTint="@{item.available ? @color/purple_500 : @color/light_grey}"
+                android:backgroundTint="@{item.available ? @color/green_500 : @color/light_grey}"
                 android:enabled="@{item.available}"
                 android:onClick="@{() -> shopInterface.addItem(item)}"
                 android:text="ADD TO CART"

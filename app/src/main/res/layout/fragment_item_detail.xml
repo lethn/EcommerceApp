@@ -62,7 +62,7 @@
                 android:layout_height="wrap_content"
                 android:text="@{shopViewModel.item.available ? `Available` : `Out of Stock`}"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-                android:textColor="@{shopViewModel.item.available ? @color/purple_500 : @color/red}" />
+                android:textColor="@{shopViewModel.item.available ? @color/green_500 : @color/red}" />
 
             <Space
                 android:layout_width="match_parent"
@@ -93,7 +93,7 @@
                 android:enabled="@{shopViewModel.item.available}"
                 android:text="ADD TO CART"
                 android:textColor="@color/white"
-                android:backgroundTint="@{shopViewModel.item.available ? @color/purple_500 : @color/light_grey}"
+                android:backgroundTint="@{shopViewModel.item.available ? @color/green_500 : @color/light_grey}"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
                 android:onClick="@{() -> shopViewModel.addItemToCart(shopViewModel.item)}"
                 />
