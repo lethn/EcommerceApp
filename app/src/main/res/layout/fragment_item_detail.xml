@@ -30,12 +30,20 @@
                 android:itemImage="@{shopViewModel.item.imageUrl}"
                 />
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="16dp" />
+
             <TextView
                 android:id="@+id/itemNameTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{shopViewModel.item.name}"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="4dp" />
 
             <TextView
                 android:id="@+id/priceTextView"
@@ -44,6 +52,10 @@
                 android:text="@{String.valueOf(shopViewModel.item.price) + `VND` }"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="4dp" />
+
             <TextView
                 android:id="@+id/availableTextView"
                 android:layout_width="wrap_content"
@@ -51,6 +63,10 @@
                 android:text="@{shopViewModel.item.available ? `Available` : `Out of Stock`}"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
                 android:textColor="@{shopViewModel.item.available ? @color/purple_500 : @color/red}" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="8dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -64,6 +80,10 @@
                 android:textColor="@color/textSecondary"
                 android:text="This is a traditional dish with rich flavor, made from the freshest ingredients with the goal of giving diners a delicious and unforgettable feeling when eating for the first time."
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="4dp" />
 
             <Button
                 android:id="@+id/addToCartButton"

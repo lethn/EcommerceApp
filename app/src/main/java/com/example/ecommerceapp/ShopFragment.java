@@ -50,8 +50,6 @@ public class ShopFragment extends Fragment implements ShopListAdapter.ShopInterf
 
         shopListAdapter = new ShopListAdapter(this);
         fragmentShopBinding.shopRecyclerView.setAdapter(shopListAdapter);
-        fragmentShopBinding.shopRecyclerView.addItemDecoration(new DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL));
-        fragmentShopBinding.shopRecyclerView.addItemDecoration(new DividerItemDecoration(requireContext(), DividerItemDecoration.HORIZONTAL));
 
         shopViewModel = new ViewModelProvider(requireActivity()).get(ShopViewModel.class);
         shopViewModel.getItems().observe(getViewLifecycleOwner(), new Observer<List<Item>>() {

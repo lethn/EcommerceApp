@@ -11,61 +11,75 @@
             type="com.example.ecommerceapp.ShopListAdapter.ShopInterface" />
     </data>
 
-    <LinearLayout
-        android:orientation="vertical"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/selectableItemBackground"
-        android:onClick="@{() -> shopInterface.onItemClick(item)}"
-        >
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/cardview_list"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="20dp">
 
-        <ImageView
-            android:id="@+id/itemImageView"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/noodles"
-            android:itemImage="@{item.imageUrl}"
-            />
-
-        <TextView
-            android:id="@+id/itemNameTextView"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{item.name}"
-            android:layout_gravity="center"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
+            android:background="?attr/selectableItemBackground"
+            android:onClick="@{() -> shopInterface.onItemClick(item)}"
+            >
 
-        <TextView
-            android:id="@+id/priceTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@{String.valueOf(item.price) + ` VND`}"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption" />
+            <ImageView
+                android:id="@+id/itemImageView"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/noodles"
+                android:itemImage="@{item.imageUrl}"
+                />
 
-        <TextView
-            android:id="@+id/availableTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@{item.available ? `Available` : `Out of Stock`}"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-            android:textColor="@{item.available ? @color/purple_500 : @color/red}" />
+            <TextView
+                android:id="@+id/itemNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{item.name}"
+                android:layout_gravity="center"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
 
-        <Button
-            android:id="@+id/addToCartButton"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textColor="@color/white"
-            android:backgroundTint="@{item.available ? @color/purple_500 : @color/light_grey}"
-            android:enabled="@{item.available}"
-            android:onClick="@{() -> shopInterface.addItem(item)}"
-            android:text="ADD TO CART"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption" />
-    </LinearLayout>
+            <TextView
+                android:id="@+id/priceTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@{String.valueOf(item.price) + ` VND`}"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption" />
+
+            <TextView
+                android:id="@+id/availableTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@{item.available ? `Available` : `Out of Stock`}"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                android:textColor="@{item.available ? @color/purple_500 : @color/red}" />
+
+            <Button
+                android:id="@+id/addToCartButton"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:backgroundTint="@{item.available ? @color/purple_500 : @color/light_grey}"
+                android:enabled="@{item.available}"
+                android:onClick="@{() -> shopInterface.addItem(item)}"
+                android:text="ADD TO CART"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
 
 </layout>
